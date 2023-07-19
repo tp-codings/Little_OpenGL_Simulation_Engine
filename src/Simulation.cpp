@@ -227,7 +227,7 @@ void Simulation::initVariables()
 	this->spaceBox = new Skybox(this->space);
 	this->forestBox = new Skybox(this->forest);
 	this->cityBox = new Skybox(this->city);
-	this->skyBoxChoice = 1;
+	this->skyBoxChoice = 0;
 
 }
 
