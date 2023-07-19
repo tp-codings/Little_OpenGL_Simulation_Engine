@@ -296,6 +296,10 @@ void Simulation::processInput(float deltaTime)
 	{
 		this->skyBoxChoice = 1;
 	}
+	if (glfwGetKey(this->window, GLFW_KEY_0) == GLFW_PRESS)
+	{
+		this->skyBoxChoice = 0;
+	}
 }
 
 //Helper------------------------------------------------------------------------------
@@ -437,13 +441,16 @@ void Simulation::DrawText()
 	}
 	this->textRenderer->Draw(this->textShader, "Shading: " + shading, this->WINDOW_WIDTH / 2, (float)this->WINDOW_HEIGHT - 2 * (float)this->fontSize, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 	
-	std::string skyboxes[] = { "Ocean", "Space", "Forest", "City" };
-	this->textRenderer->Draw(this->textShader, "Skybox: " + skyboxes[skyBoxChoice-1], this->WINDOW_WIDTH / 2, (float)this->WINDOW_HEIGHT - 3 * (float)this->fontSize, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+	std::string skyboxes[] = { "No Skybox", "Ocean", "Space", "Forest", "City" };
+	this->textRenderer->Draw(this->textShader, "Skybox: " + skyboxes[skyBoxChoice], this->WINDOW_WIDTH / 2, (float)this->WINDOW_HEIGHT - 3 * (float)this->fontSize, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 }
 
 void Simulation::DrawSkyBox()
 {
 	switch (this->skyBoxChoice) {
+	case 1:
+		this->oceanBox->render(this->cubeMapShader, this->camera, this->projection);
+		break;
 	case 2:
 		this->spaceBox->render(this->cubeMapShader, this->camera, this->projection);
 		break;	
@@ -454,6 +461,6 @@ void Simulation::DrawSkyBox()
 		this->cityBox->render(this->cubeMapShader, this->camera, this->projection);
 		break;
 	default:
-		this->oceanBox->render(this->cubeMapShader, this->camera, this->projection);
+		break;
 	}
 }
