@@ -1,6 +1,12 @@
 # Little OpenGL Simulation Engine
 This Project is a template project for my simulations with OpenGL. 
 
+## Project Overview
+
+| Personal Rating | Year of Development | Languages | Tools | Type of Application |
+| --- | --- | --- | --- | --- |
+| ⭐️⭐️ (2/5) | 2023 | C++ | OpenGL, GLFW, ImGUI, Freetype | Simulation |
+
 ## Features
 - setup for interactive camera / ModelLoader / GUI
 - renders cube with shading
