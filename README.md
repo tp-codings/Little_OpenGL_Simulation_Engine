@@ -13,6 +13,16 @@ This Project is a template project for my simulations with OpenGL.
 - good starting point for projects with OpenGL in 3D Space
 
 # Getting Started
+
+## Prerequisites and basic information
+
+- This application is tested in windows 10/11
+- This repo does not provide an executable -> you have to compile your own (I used Visual Studio)
+- I don't guarantee that every corner case has been taken into account. The project is part of my learning process for C++ and OpenGL
+- All dependencies are included in this repo, so it is almost plug and play :)
+
+## Installation
+
 1. Clone Repository
 `git clone https://github.com/tp-codings/Little_OpenGL_Simulation_Engine.git`
 2. Build Executable (e.g. Visual Studio)
